@@ -1,0 +1,414 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding-inline: 10px;
+  font-family: var(--main-font), monospace;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  block-size: 100vh;
+  min-block-size: 668px;
+  align-items: center;
+  margin-block-end: 40px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before { 
+  position: absolute;
+  content: ''; 
+  right: 0;
+  top: var(--main-gap);
+  inline-size: 25px; 
+  block-size: 25px; 
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color); 
+} 
+
+.decorated-zone::after {
+  content: ''; 
+  position: absolute;
+  bottom: var(--main-gap);
+  inline-size: 25px; 
+  block-size: 25px; 
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color); 
+} 
+
+.decorative-text {
+  position: absolute;
+  top: var(--main-gap);
+  right: 28px;  
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: var(--main-text-size);
+  font-weight: 400;
+  line-height: 1.39;
+  text-align: center;
+}
+
+.decorative-text::after {
+  content: '';  
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0px 0px 4px 2px rgb(255, 0, 112);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  inline-size: 0.5em;
+  block-size: 0.5em;
+  margin-block-start: 0.5em;
+  margin-inline-start: 0.5em;
+}
+
+.header__theme-menu {
+  align-self: start;
+  justify-self: end;
+  margin-block-start: 75px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  min-block-size: 1.6em;
+}
+
+.header__theme-menu-button {
+  border: none;
+  background-color: transparent;
+  font-family: var(--main-font), monospace;
+  font-size: var(--main-text-size);
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  border: 1px solid transparent;
+  padding: 2px 13px 4px;
+}
+
+.header__theme-menu-button:hover, .header__theme-menu-button_active {
+  border-color: var(--accent-color)
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom-color: var(--accent-color);
+}
+
+.page-title {
+  font-family: var(--main-font), monospace;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  color: var(--accent-color-alt);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.title-decor {
+  font-family: var(--main-font), monospace;
+  font-size: var(--main-text-size);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--background-color);
+  background-color: var(--accent-color);
+}
+
+.header-text {
+  align-self: center;
+  justify-self: end;
+  max-inline-size: 100%;
+}
+
+.content-header {
+  color: var(--accent-color);
+  font-family: var(--main-font), monospace;
+  font-size: var(--main-text-size);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  block-size: 100%;
+  margin-block-end: var(--main-gap);
+}
+
+.card {
+  display: grid;
+  gap: var(--main-gap);
+  margin-block-end: calc(4 * var(--main-gap));
+} 
+
+.text-block {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.type-two {
+  margin-block-start: var(--main-gap);
+}
+
+.card-text {
+  font-family: var(--main-font), monospace;
+  font-size: var(--main-text-size);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: left;
+  color: var(--main-text-color);
+  margin-block-end: var(--main-gap);
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color)
+}
+
+.text-link:hover {
+  border-bottom: solid 1px var(--main-text-color)
+}
+
+.text-link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.advice-header {
+  font-family: var(--main-font), monospace;
+  font-size: var(--main-text-size);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: left;
+  color: var(--background-color);
+  background-color: var(--accent-color);
+}
+
+.gallery {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+  margin-block-end: calc(4 * var(--main-gap));
+}
+
+.gallery-grid {
+  display: grid;
+  gap: var(--main-gap);
+  align-content: space-between;
+}
+
+.gallery-image {
+  inline-size: 100%; 
+  block-size: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+}
+
+.footer-heading {
+  font-family: var(--main-font), monospace;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  color: var(--accent-color-alt);
+  align-self: center;
+  justify-self: center;
+  text-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+@media (1000px > width > 750px) {
+  .page {
+    padding-inline: 20px;
+  }
+  .header {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    margin-block-end: 60px;
+  }
+  .page-title {
+    margin-inline-start: -20px;
+    justify-self: start;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 5; 
+  }
+  .header-text {
+    grid-row: 3;
+    grid-column: 3 / 5;
+  }
+  .header__theme-menu {
+    grid-row: 1;
+    grid-column: 4 / 5;
+    justify-self: end;
+  }
+  .decorated-zone {
+    --main-gap: 20px;
+  }
+}
+
+@media (width > 1000px) {
+  .page {
+    padding-inline: 20px;
+  }
+  .decorated-zone {
+    --main-gap: 20px;
+  }
+  .header {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    margin-block-end: 60px;
+  }
+  .header__theme-menu {
+    display: flex;
+    justify-self: center;
+    align-self: start;
+    inline-size: 100%;
+    margin-block-start: 20px;
+    grid-column: 1 / 5;
+  }
+  .header__theme-menu-list {
+    display: flex;
+    justify-content: center;
+    inline-size: 100%;
+    flex-direction: row;
+  }
+  .page-title {
+    margin-inline-start: -20px;
+    justify-self: start;
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 5; 
+  }
+  .header-text {
+    grid-row: 3;
+    grid-column: 3 / 5;
+  }
+  }
+
+@media (1000px > width > 750px) {
+  .card {
+    grid-template-columns: 1fr 2fr;
+    margin-block-end: calc(7 * var(--main-gap));
+  }
+  .content-header {
+    max-width: 236px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  .text-block{
+    grid-column: 2 / -1;
+  }
+  .type-two  {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery {
+    margin-block-end: calc(6 * var(--main-gap));
+  }
+  .gallery-grid {
+    inline-size: 100%;
+    block-size: 100%;
+    gap: calc(2 * var(--main-gap));
+  }
+  .sunset {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+  }
+  .ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+  .tape {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  .books {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .street {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (width > 1000px) {
+  .card {
+    grid-template-columns: 1fr 2fr;
+    margin-block-end: calc(7 * var(--main-gap));
+  }
+  .content-header {
+    grid-column: 1 / 2;
+    grid-row: span 7;
+    max-width: 315px;
+  }
+  .card-text {
+    grid-column: span 2;
+  }
+  .card-header {
+    grid-column: span 2;
+  }
+  .advice-header {
+    grid-column: span 2; 
+  }
+  .text-block {
+    grid-template-rows: min-content 1fr;
+  }
+  .type-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .type-two .content-header {
+    grid-column: 1 / 5;
+  }
+  .gallery {
+    margin-block-end: calc(6 * var(--main-gap));
+  }
+  .gallery-grid {
+    inline-size: 100%;
+    block-size: 100%;
+    gap: calc(2 * var(--main-gap));
+  }
+  .sunset {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+  }
+  .ice-cream {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+  .tape {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  .books {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .street {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+}
