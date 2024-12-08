@@ -6,11 +6,15 @@
 :root {
   --main-text-color: rgb(241, 178, 206);
   --accent-color: rgb(255, 0, 112);
+  --header-color: rgb(0, 0, 40);
+  --card-header-color: rgb(255, 0, 112);
+  --accent-color-transparent: rgba(255, 0, 112, .4);
   --accent-color-alt: rgb(219, 0, 255);
   --background-color: rgb(0, 0, 40);
   --shadow-color: rgb(255, 0, 112);
   --main-font: 'IBM Plex Mono';
   --main-text-size: 18px;
   --main-gap: 10px;
-  --bg-image: url(../images/cover-image-dark.png)
+  --bg-image: url(../images/cover-image-dark.png);
+  --decorative-visibility: block;
 }
